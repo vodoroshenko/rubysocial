@@ -55,4 +55,4 @@ jobs:
            GIT_TAG: ${{ steps.increment-git-tag.outputs.git-tag }}
          run: |-
           docker tag $IMAGE_NAME:latest us-docker.pkg.dev/$PROJECT_ID/gcr.io/$IMAGE_NAME
-          docker push us-central1-docker.pkg.dev/$PROJECT_ID/gcr.io/$IMAGE_NAME
+          docker push us-docker.pkg.dev/$PROJECT_ID/gcr.io/$IMAGE_NAME

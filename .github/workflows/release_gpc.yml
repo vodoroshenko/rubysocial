@@ -4,11 +4,11 @@ on:
       - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10 
 jobs: 
    backend-frontend:
-    env:
+    name: Create backend and frontend releases 
+     runs-on: ubuntu-latest
+     env:
       IMAGE_NAME: RYBYCHAT
       PROJECT_ID: even-ally-356808 
-     name: Create backend and frontend releases 
-     runs-on: ubuntu-latest 
      steps: 
        - name: Check Out Repo 
          uses: actions/checkout@v2 

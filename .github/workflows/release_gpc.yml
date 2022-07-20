@@ -5,11 +5,11 @@ on:
 jobs: 
    backend-frontend:
     name: Create backend and frontend releases 
-     runs-on: ubuntu-latest
-     env:
-      IMAGE_NAME: RYBYCHAT
-      PROJECT_ID: even-ally-356808 
-     steps: 
+    runs-on: ubuntu-latest
+    env:
+       IMAGE_NAME: RUBYCHAT
+       PROJECT_ID: even-ally-356808 
+    steps: 
        - name: Check Out Repo 
          uses: actions/checkout@v2 
   

@@ -49,7 +49,6 @@ jobs:
        #    docker tag $IMAGE_NAME:latest us-docker.pkg/$PROJECT_ID/gcr.io/$IMAGE_NAME:$GIT_TAG      
        #    docker push us-docker.pkg.dev/$PROJECT_ID/gcr.io/$IMAGE_NAME:latest
        #    docker push us-docker.pkg/$PROJECT_ID/gcr.io/$IMAGE_NAME:$GIT_TAG 123
-
        - name: Push Docker Image to Artifact Registry
          env:
            GIT_TAG: ${{ steps.increment-git-tag.outputs.git-tag }}

@@ -23,11 +23,6 @@ jobs:
          with: 
            credentials_json: ${{ secrets.GOOGLE_CREDENTIALS }} 
   
-       - name: Automatic Tagging of Releases
-         id: increment-git-tag
-         run: |
-          bash ./scripts/git_update.sh -v major
-
        - name: Configure Docker Client
          run: |-
             gcloud auth configure-docker --quiet

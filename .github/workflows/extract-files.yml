@@ -1,38 +1,36 @@
-name: Publish Docker image
-
+name: Publish Docker image 123
 on:
   release:
     types: [published]
-
 jobs:
   extract-files:
     name: Create backend and frontend releases 
     runs-on: ubuntu-latest
     steps:
-       - name: Check Out Repo 
-         uses: actions/checkout@v2 
+     - name: Check Out Repo 
+       uses: actions/checkout@v2 
          
-       - name: Login to Google Cloud
-         id: auth 
-         uses: google-github-actions/auth@v0 
-         with: 
-           credentials_json: ${{ secrets.GOOGLE_CREDENTIALS }}
+     - name: Login to Google Cloud
+       id: auth 
+       uses: google-github-actions/auth@v0 
+       with: 
+         credentials_json: ${{ secrets.GOOGLE_CREDENTIALS }}
          
-       - name: Login to Docker Hub 
-         uses: docker/login-action@v1 
-         with: 
-           username: ${{ secrets.DOCKER_HUB_LOGIN }} 
-           password: ${{ secrets.DOCKER_HUB_TOKEN }}   
+     - name: Login to Docker Hub 
+       uses: docker/login-action@v1 
+       with: 
+          username: ${{ secrets.DOCKER_HUB_LOGIN }} 
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}   
 
-       - name: Extract static files 
-         id: extract 
-         uses: shrink/actions-docker-extract@v1 
-         with: 
-           image: xotabich/rubysocial:v0.3 
-           path: /usr/src/app/public/.
+     - name: Extract static files 
+       id: extract 
+       uses: shrink/actions-docker-extract@v1 
+       with: 
+         image: xotabich/rubysocial:v0.3 
+         path: /usr/src/app/public/.
 
-       - name: Upload Dist
-         uses: actions/upload-artifact@v2
-         with:
-           path: ${{ steps.extract.outputs.destination }}
-           name: dist 
+     - name: Upload Dist
+       uses: actions/upload-artifact@v2
+       with:
+         path: ${{ steps.extract.outputs.destination }}
+         name: dist 

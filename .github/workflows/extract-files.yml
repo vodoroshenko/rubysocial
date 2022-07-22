@@ -1,7 +1,5 @@
 name: Publish Docker image 123
-on:
-  release:
-    types: [published]
+on: push
 jobs:
   extract-files:
     name: Create backend and frontend releases 

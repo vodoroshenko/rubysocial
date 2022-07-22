@@ -6,7 +6,9 @@ on:
 
 jobs:
   extract-files:
-  
+    name: Create backend and frontend releases 
+    runs-on: ubuntu-latest
+    steps:
        - name: Login to Google Cloud
          id: auth 
          uses: google-github-actions/auth@v0 

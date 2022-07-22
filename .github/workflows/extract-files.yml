@@ -5,6 +5,8 @@ on:
     types: [published]
 
 jobs:
+  extract-files:
+  
        - name: Login to Google Cloud
          id: auth 
          uses: google-github-actions/auth@v0 

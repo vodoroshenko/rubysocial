@@ -119,6 +119,8 @@ GEM
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
     pg (1.2.3)
+    postgresql (1.0.0)
+      pg
     public_suffix (4.0.5)
     puma (5.4.0)
       nio4r (~> 2.0)
@@ -231,6 +233,7 @@ DEPENDENCIES
   listen (~> 3.2)
   mimemagic!
   pg (~> 1.2)
+  postgresql (~> 1.0)
   puma (~> 5.0)
   rails (~> 6.0.3)
   react-rails

@@ -51,4 +51,4 @@
   
        - name: Deploy to Kubernetes 
          run: 
-           helm upgrade rubychat ~/git/rubysocial/deployment/kubernetes/helm/rubychat/ --install --wait --atomic  --set=version=${{ github.event.inputs.version }} --kubeconfig ~/.kube/config 
+           helm upgrade rubysocial ~/git/rubysocial/deployment/kubernetes/helm/rubychat/ --install --wait --atomic  --set=version=${{ github.event.inputs.version }} --kubeconfig ~/.kube/config 

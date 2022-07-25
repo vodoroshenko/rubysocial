@@ -28,8 +28,7 @@
   
        - name: Configure docker to use the gcloud command-line tool as a credential helper
          run: |
-          gcloud auth configure-docker 
-  
+            gcloud auth application-default login --project=even-ally-356808
        # Install helm
        - name: Install Helm
          run: |

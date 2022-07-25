@@ -26,11 +26,9 @@
        #    service_account_email: ${{ secrets.GKE_EMAIL }}
        #    service_account_key: ${{ secrets.GKE_KEY }} 
   
-       #- name: Configure docker to use the gcloud command-line tool as a credential helper
-       #  run: |
-        # Set up docker to authenticate
-        # via gcloud command-line tool.
-       #    gcloud auth configure-docker 
+       - name: Configure docker to use the gcloud command-line tool as a credential helper
+         run: |
+          gcloud auth configure-docker 
   
        # Install helm
        - name: Install Helm

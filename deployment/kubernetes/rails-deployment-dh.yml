@@ -36,3 +36,7 @@ spec:
               secretKeyRef: 
                 name: database-password 
                 key: database-password
+          - name: STATIC_FILES_ENDPOINT 
+            value: https://rubychat.s3.amazonaws.com 
+          - name: FRONTEND_VERSION 
+            value: v0.32

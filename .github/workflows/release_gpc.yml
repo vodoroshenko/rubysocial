@@ -30,14 +30,7 @@ jobs:
 
        - name: Build docker image
          run: docker build -t $IMAGE_NAME:latest . --build-arg RAILS_KEY=${{ secrets.RAILS_KEY }}
-         #id: docker_build 
-         #uses: docker/build-push-action@v2 
-         #with: 
-         #  context: ./ 
-         #  file: ./Dockerfile 
-         #build-args: | 
-         #  RAILS_KEY=${{ secrets.RAILS_KEY }} 
-
+              
        - name: Image digest 
          run: echo ${{ steps.docker_build.outputs.digest }}
 
@@ -56,3 +49,16 @@ jobs:
          run: |-
           docker tag $IMAGE_NAME:latest us-docker.pkg.dev/$PROJECT_ID/gcr.io/$IMAGE_NAME
           docker push us-docker.pkg.dev/$PROJECT_ID/gcr.io/$IMAGE_NAME
+
+       - name: Extract static files 
+         id: extract 
+         uses: shrink/actions-docker-extract@v1 
+         with: 
+           image: us-docker.pkg.dev/even-ally-356808/gcr.io/$IMAGE_NAME 
+           path: /usr/src/app/public/. 
+  
+       - name: Upload Dist
+         uses: actions/upload-artifact@v2
+         with:
+           path: ${{ steps.extract.outputs.destination }}
+           name: dist  

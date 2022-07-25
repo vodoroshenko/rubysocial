@@ -20,11 +20,11 @@
          with: 
            credentials_json: ${{ secrets.GOOGLE_CREDENTIALS }} 
   
-       # Configure docker to use the gcloud command-line tool as a credential helper
-       - run: |
+       - name: Configure docker to use the gcloud command-line tool as a credential helper
+         run: |
         # Set up docker to authenticate
         # via gcloud command-line tool.
-        gcloud auth configure-docker 
+           gcloud auth configure-docker 
   
        # Install helm
        - name: Install Helm

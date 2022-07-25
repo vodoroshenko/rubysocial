@@ -18,13 +18,19 @@
          id: auth 
          uses: google-github-actions/auth@v0 
          with: 
-           credentials_json: ${{ secrets.GOOGLE_CREDENTIALS }} 
+           credentials_json: ${{ secrets.GOOGLE_CREDENTIALS }}
+       # Setup gcloud CLI
+       #- uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+       #  with:
+       #    version: '270.0.0'
+       #    service_account_email: ${{ secrets.GKE_EMAIL }}
+       #    service_account_key: ${{ secrets.GKE_KEY }} 
   
-       - name: Configure docker to use the gcloud command-line tool as a credential helper
-         run: |
+       #- name: Configure docker to use the gcloud command-line tool as a credential helper
+       #  run: |
         # Set up docker to authenticate
         # via gcloud command-line tool.
-           gcloud auth configure-docker 
+       #    gcloud auth configure-docker 
   
        # Install helm
        - name: Install Helm

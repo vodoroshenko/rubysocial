@@ -49,7 +49,6 @@ jobs:
          run: |-
           docker tag $IMAGE_NAME:latest us-docker.pkg.dev/$PROJECT_ID/gcr.io/$IMAGE_NAME
           docker push us-docker.pkg.dev/$PROJECT_ID/gcr.io/$IMAGE_NAME
-<<<<<<< HEAD
 
        - name: Extract static files 
          id: extract 
@@ -63,5 +62,3 @@ jobs:
          with:
            path: ${{ steps.extract.outputs.destination }}
            name: dist  
-=======
->>>>>>> 3bd2ab68ad95993ec64b59310da151b72abec47b

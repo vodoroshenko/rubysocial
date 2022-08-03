@@ -1,0 +1,22 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "/home/user/Downloads/postgresql-42.4.0.jar",
+            "/home/user/Downloads/postgres-socket-factory-1.6.2-jar-with-driver-and-dependencies.jar",
+            "/home/user/Downloads/jdbc-connector-2.0-rc1-sources.jar",
+            "/home/user/Downloads/jdbc-connector-2.0.jar",
+            "/home/user/Downloads/mysql-connector-java-8.0.30/mysql-connector-java-8.0.30.jar",
+            "/home/user/Downloads/mysql-socket-factory-1.6.2-jar-with-dependencies.jar",
+            "/home/user/Downloads/mysql-socket-factory-connector-j-8-1.6.2-jar-with-dependencies.jar",
+            "/home/user/Downloads/mysql-socket-factory-1.6.2-jar-with-driver-and-dependencies.jar",
+            "/home/user/Downloads/postgres-socket-factory-1.6.2-jar-with-dependencies.jar",
+            "/home/user/Downloads/mysql-socket-factory-connector-j-8-1.6.2-jar-with-driver-and-dependencies.jar"
+        ],
+        "exclude": [
+            "/home/user/Downloads/jdbc-connector-2.0-rc1.jar"
+        ]
+    }
+}
